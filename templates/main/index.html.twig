@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<title>Genres</title>
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="example-wrapper">
+    <h1>Genres</h1>
+
+    
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Titels</th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {% for genres in genre  %}
+
+      <th scope="row">{{genres.id}}</th>
+      <td>{{ genres.name }} </td>
+      <td>
+      <a href ="/genre/{{genres.id}}" class="btn btn-warning">Go</button>
+      </td>
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+</div>
+{% endblock %}
